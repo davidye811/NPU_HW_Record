@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;d.java&apos; to &apos;FFF/src/cs480lab6&apos;&#x0D;&#x0A;- Original project: &apos;FFF&apos;&#x0D;&#x0A;- Destination element: &apos;FFF/src/cs480lab6&apos;&#x0D;&#x0A;- Original element: &apos;MyInterger.d.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;cs480lab6" element1="/src&lt;MyInterger{d.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1487565424198" units="1" version="1.0"/>
+</session>

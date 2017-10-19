@@ -1,0 +1,52 @@
+package npuBus.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import npuBus.domain.Student;
+import npuBusService.busService;
+
+
+
+@WebServlet("/liststudents.html")
+public class ListStudentsServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException 
+	{
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
+
+		String busid = request.getParameter("busid");
+		out.println(Integer.valueOf(busid));
+		ArrayList<String> studentList = busService.getBusStudent(Integer.valueOf(busid));
+
+		out.println("<html><head><title>Student Course List</title>");
+		out.println("<body><h1>List of students in " + busid + "</h1>");
+		out.println(Integer.valueOf(busid));
+		if (studentList == null) {
+			out.println("Unknown Course");
+		} else if (studentList.size() == 0) {
+			out.println("Currently no students are enrolled in this course");
+		} else {
+			out.println("<ul>");
+			for (String curStudent : studentList) {
+				out.println("<li>");
+				out.println(curStudent);
+				out.println("</li>");
+			}
+		}
+
+		out.println("</ul>");
+		out.println("</body></html>");
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;MyHashTable&apos; to &apos;CS_501/src&apos;&#x0D;&#x0A;- Original project: &apos;CS_532&apos;&#x0D;&#x0A;- Destination element: &apos;CS_501/src&apos;&#x0D;&#x0A;- Original element: &apos;CS_532/MyHashTable&apos;" description="Copy package" destination="=CS_501/src" element1="/&lt;MyHashTable" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1489438370486" version="1.0"/>
+</session>

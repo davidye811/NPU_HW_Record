@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="-69" key="DIALOG_X_ORIGIN"/>
+		<item value="-58" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.preferences.keysPreferencePage">
+		<item value="true" key="actionSetFilter"/>
+		<item value="true" key="uncategorizedFilter"/>
+		<item value="true" key="internalFilter"/>
+	</section>
+	<section name="EditorSelectionDialog">
+		<item value="false" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
+		<item value=".html" key="EditorSelectionDialog.STORE_ID_FILE_EXTENSION"/>
+		<item value="org.eclipse.mylyn.wikitext.ui.editor.markupEditor" key="EditorSelectionDialog.STORE_ID_DESCR"/>
+	</section>
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item value="250" key="dialogHeight"/>
+		<item value="350" key="dialogWidth"/>
+		<list key="textEntries">
+		</list>
+		<list key="orderedElements">
+		</list>
+		<list key="orderedProviders">
+		</list>
+		<list key="textArray">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.wst.html.ui.internal.wizard.NewHTMLWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.ui.wizards.export.ZipFile" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
+		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+	<section name="ZipFileImportWizard">
+		<item value="false" key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\hasee\Downloads\rectangleEx.zip"/>
+			<item value="E:\HW\zip\19467_DaweiYe_CS532(A)_Final.zip"/>
+			<item value="C:\Users\hasee\Documents\Tencent Files\79836104\FileRecv\SchedulerApp(1).zip"/>
+			<item value="C:\Users\hasee\Documents\Tencent Files\79836104\FileRecv\schedulerapp.zip"/>
+			<item value="C:\Users\hasee\Desktop\GUIdemo.zip"/>
+			<item value="C:\Users\hasee\Documents\Tencent Files\79836104\FileRecv\GUIdemo.zip"/>
+			<item value="C:\Users\hasee\Documents\Tencent Files\79836104\FileRecv\HW3.zip"/>
+			<item value="C:\Users\hasee\Downloads\bankAcctConnPool (1).zip"/>
+			<item value="C:\Users\hasee\Documents\Tencent Files\79836104\FileRecv\cs480lab_7.zip"/>
+			<item value="C:\Users\hasee\Downloads\WordCount.zip"/>
+			<item value="C:\Users\hasee\Downloads\hadoop-core-0.20.2.jar"/>
+		</list>
+	</section>
+	<section name="ZipFileExportWizard">
+		<item value="true" key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID"/>
+		<item value="true" key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
+		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="E:\HW\zip\19467_DaweiYe_CS548(A)_Lab1.zip"/>
+			<item value="E:\HW\zip\19467_DaweiYe_CS548(A)_Lab2.zip"/>
+			<item value="E:\HW\zip\19467_DaweiYe_CS532(A)_Final.zip"/>
+			<item value="C:\Users\hasee\Desktop\yyuu.zip"/>
+			<item value="C:\Users\hasee\Desktop\asdfasfd.zip"/>
+			<item value="E:\HW\zip\19467_DaweiYe_CS501(A)_HW7.zip"/>
+			<item value="E:\HW\zip\19467_DaweiYe_CS501(A)_HW6.zip"/>
+			<item value="E:\HW\zip\19467_DaweiYe_CS501(A)_HW5.zip"/>
+			<item value="E:\HW\zip\19467_DaweiYe_CS501(A)_HW3.zip"/>
+			<item value="E:\HW\zip\19467_DaweiYe_CS532(A)_HW3.zip"/>
+		</list>
+	</section>
+</section>

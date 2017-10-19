@@ -1,0 +1,51 @@
+package npuBus.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+import npuBus.domain.Bus;
+import npuBusService.busService;
+
+// To run this servlet, point your browser to:  http://localhost:8080/classreg2/listcourses.html
+@WebServlet("/listbuses.html")
+public class ListCoursesServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int Busid;
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
+
+		ArrayList<Bus> busList = busService.getCourseList();
+
+		out.println("<html><head><title>List of Courses</title>");
+		out.println("<body><h1>List of courses:</h1>");
+
+		if (busList == null || busList.size() == 0) {
+			out.println("No courses available at this time");
+		} else {
+			out.println("<ul>");
+			for (Bus curbus: busList) {
+				Busid = curbus.getBusId();
+				out.println("<li>");
+				//out.println(courseName);
+				/* OR, use a hyperlink as shown below -- uncomment */
+				 out.println("<a href=/classreg2/liststudents.html?busid="
+				 + Busid + ">" + Busid + "</a>");
+				out.println("</li>");
+			}
+		}
+
+		out.println("</ul>");
+		out.println("</body></html>");
+	}
+}

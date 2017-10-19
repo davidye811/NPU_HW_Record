@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 elements to &apos;practiceWeb&apos;&#x0D;&#x0A;- Original project: &apos;CS_532_LAB4_JDBC&apos;&#x0D;&#x0A;- Destination element: &apos;practiceWeb&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     commons-dbcp-1.4.jar&#x0D;&#x0A;     commons-pool-1.4.jar&#x0D;&#x0A;     mysql-connector-java-5.1.27-bin.jar&#x0D;&#x0A;- Update references to refactored element" description="Move files" destination="=practiceWeb" element1="commons-dbcp-1.4.jar" element2="commons-pool-1.4.jar" element3="mysql-connector-java-5.1.27-bin.jar" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1492483233601" units="0" version="1.0"/>
+</session>

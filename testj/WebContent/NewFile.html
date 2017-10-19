@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>加载海量点</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <style type="text/css">
+    html,body{
+        margin:0;
+        width:100%;
+        height:100%;
+        background:#ffffff;
+    }
+    #map{
+        width:100%;
+        height:100%;
+    }
+    #panel {
+        position: absolute;
+        top:30px;
+        left:10px;
+        z-index: 999;
+        color: #fff;
+    }
+    #login{
+        position:absolute;
+        width:300px;
+        height:40px;
+        left:50%;
+        top:50%;
+        margin:-40px 0 0 -150px;
+    }
+    #login input[type=password]{
+        width:200px;
+        height:30px;
+        padding:3px;
+        line-height:30px;
+        border:1px solid #000;
+    }
+    #login input[type=submit]{
+        width:80px;
+        height:38px;
+        display:inline-block;
+        line-height:38px;
+    }
+  </style>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GW3E1SZV5SVZp18zHx0dyEOtUUZeugy4"></script>
+  <script type="text/javascript" src="js_folder/7.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+    <script type="text/javascript">
+    var getRandomColor = function(){
+        return '#'+('00000'+(Math.random()*0x1000000<<0).toString(16)).substr(-6);
+    }
+    var map = new BMap.Map("map", {});                        // 创建Map实例
+    var M_num = data.data.length;
+    map.centerAndZoom(new BMap.Point(120.200, 30.300), 12);     // 初始化地图,设置中心点坐标和地图级别
+    map.enableScrollWheelZoom();                        //启用滚轮放大缩小
+    if (document.createElement('canvas').getContext) {  // 判断当前浏览器是否支持绘制海量点
+       //var polygon = new BMap.Polygon(points, {fillColor:"black", strokeWeight:2, strokeOpacity:0.5});  //创建多边形
+     //polygon.setFillColor("black");
+    //   map.addOverlay(polygon);  //添加覆盖物
+    	var receive_flat=1;
+        var colorArr=[];
+    	var points=[];
+    	var arr_num=0;
+    	var rec_num=0;
+    	translateCallback = function (data1){
+    		
+    	points.push(new Array(data1.points[0].lng,data1.points[0].lat,colorArr[arr_num]));
+    
+    		alert(1);
+   			if(arr_num<M_num-1){
+   				arr_num++;
+   					make_array();
+   			}
+   			else{
+   			 var max= 0 ;
+             	for (var i=0;i<M_num;i++){
+             		if(points[i][2]>max)
+             		max=points[i][2];   	
+             		}
+            	 for (var max_i = 1;max_i<=max;max_i++){
+             	 var pointdis = [];  // 添加海量点数据
+       			
+             	for(var clus_i=0;clus_i<points.length;clus_i++){
+             		if(points[clus_i][2]==max_i)
+             		pointdis.push(new BMap.Point(points[clus_i][0], points[clus_i][1]));
+             }
+             var options = {
+                 size: BMAP_POINT_SIZE_SMALL,
+                 shape: BMAP_POINT_SHAPE_CIRCLE,
+                 color: getRandomColor()//紫色
+             }
+             var pointCollection = new BMap.PointCollection(pointdis, options);  // 初始化PointCollection
+            map.addOverlay(pointCollection);
+        	}
+   		}
+     }
+        
+      setTimeout(function(){
+        	make_array();
+        }, 1000);
+       
+ 	function make_array(){
+    	   var pointArr = [];
+    	   pointArr.push(new BMap.Point(data.data[arr_num][0], data.data[arr_num][1]));
+    	   colorArr.push(data.data[arr_num][2]);
+    	   new BMap.Convertor().translate(pointArr, 1, 5, translateCallback);
+    	   }   
+      
+    } else {
+        alert('请在chrome、safari、IE8+以上浏览器查看本示例');
+    }
+    
+   /* var  div_send = function(over_points[]){
+    	for (var i=0;i<parseInt(over_points.length/100);i++){
+    		  var convertor = new BMap.Convertor();
+    	        var pointArr = [];
+    			for (var j=0;j<100;j++){
+    				colorArr[ko]=data.data[i*100+j][2];
+    		        pointArr.push(new BMap.Point(data.data[i*100+j][0], data.data[i*100+j][1]));
+    		        colorArr[ko]=data.data[i*100+j][2];
+    			}
+    			 convertor.translate(pointArr, 1, 5, translateCallback);
+    			}
+    	
+    }*/
+  </script>
+</body>
+</html>
+
+	

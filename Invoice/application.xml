@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+      xmlns:context="http://www.springframework.org/schema/context"
+      xmlns:c="http://www.springframework.org/schema/c"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+>
+      
+    <context:property-placeholder location="classpath:*.properties"/>
+   
+    <context:component-scan base-package="nvz.services"/>
+	<!-- add your bean definitions here! -->
+	<!--  
+	<bean id="shippingCalculator1" class="nvz.services.ShippingChargeCalculatorSimpleImpl"  />
+	
+	<bean id="shippingCalculator" class="nvz.services.ShippingChargeCalculatorSimpleImpl"  />
+	-->	
+	<!-- 
+	<bean id="invoiceGenerator" class="nvz.services.InvoiceGeneratorImpl">
+	 
+    	    <property name="shippingCalculator" ref="shippingCalculator" />  
+		
+			<property name="companyName" value="${invoice.companyName}" />
+		
+			<property name="companyId" value="129" />
+			<property name="salesTax" value="${invoice.salesTax}" />
+	</bean>
+-->	
+
+</beans>

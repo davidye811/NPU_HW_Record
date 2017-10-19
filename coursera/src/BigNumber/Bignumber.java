@@ -1,0 +1,41 @@
+package BigNumber;
+
+public class Bignumber {
+	int[] digitStoredinArray;
+	public Bignumber(){
+		digitStoredinArray=new int[200];
+	}
+	public Bignumber(int n){
+		int digit=0;
+		while(n>0){
+			digitStoredinArray[digit]=n%10;
+			digit++;
+			n=n/10;
+		}
+	}
+	public Bignumber(String n){
+		char[] a = n.toCharArray();
+		digitStoredinArray = new int[a.length];
+		int number =a.length-1 ;
+		for(char m :a ){
+			digitStoredinArray[number--]=m-'0';
+		}
+	}
+	public Bignumber plusBigNumber(Bignumber n2){
+		
+	}
+	public String toString(){
+		StringBuffer sbf=new StringBuffer();
+		int digit=digitStoredinArray.length-1;
+		
+		for(int i=digit;i>=0;i--){
+			sbf.append(digitStoredinArray[i]);
+		}
+		return sbf.toString();
+	}
+	public static void main(String[] argv){
+		String n="2884197169399375105820974944592";
+		Bignumber newBigNumber= new Bignumber(n);
+		System.out.println(newBigNumber);
+	}
+}

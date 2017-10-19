@@ -1,0 +1,48 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+      xmlns:context="http://www.springframework.org/schema/context"
+      xmlns:c="http://www.springframework.org/schema/c"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+>
+      
+    <context:property-placeholder location="classpath:*.properties"/>
+   
+    <context:component-scan base-package="ydw.services"/>
+	<!-- add your bean definitions here! -->
+	 
+	<bean id="PaypalinvoiceGenerator" class="ydw.services.PaypalInvoiceGeneratorImpl"  >	
+			<property name="companyName" value="${invoice.companyName_paypal}" />
+			<property name="cardNumber" value="${invoice.cardnumber}" />
+			<property name="payAmount" value="${invoice.payAmount}" />
+			</bean>
+	<bean id="WellsFargoinvoiceGenerator" class="ydw.services.WellsFargoInvoiceGeneratorImpl"  >	
+			<property name="companyName" value="${invoice.companyName_WellsFargo}" />
+			<property name="cardNumber" value="${invoice.cardnumber}" />
+			<property name="payAmount" value="${invoice.payAmount}" />
+			</bean>
+	<bean id="TuitionCalculatorOSU" class="ydw.services.TuitionCalculatorOSUImpl"/>
+	
+	<bean id="TuitionCalculatorNational" class="ydw.services.TuitionCalculatorNationalImpl"/>
+	<bean id="StuCheckService" class="ydw.services.StudentCheckoutServiceImpl"  >	
+			<property name="paymentMethod" value="${invoice.typeOfPaymentMethod}" />
+			<property name="checkOutMethod" value="${invoice.typeOfTuitionCalculater}" />
+			<property name="tuitioncalculatorservice1" ref ="TuitionCalculatorNational" />  
+			<property name="tuitioncalculatorservice2" ref ="TuitionCalculatorOSU" />  
+			<property name="invoicegenerator1" ref="PaypalinvoiceGenerator" />  
+			<property name="invoicegenerator2" ref="WellsFargoinvoiceGenerator" />  
+			</bean>
+	<!-- 
+	<bean id="invoiceGenerator" class="nvz.services.InvoiceGeneratorImpl">
+	 
+    	    <property name="shippingCalculator" ref="shippingCalculator" />  
+		
+			<property name="companyName" value="${invoice.companyName}" />
+		
+			<property name="companyId" value="129" />
+			<property name="salesTax" value="${invoice.salesTax}" />
+	</bean>
+-->	
+
+</beans>

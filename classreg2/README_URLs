@@ -1,0 +1,6 @@
+To register for a course:
+http://localhost:8080/classreg2/register.html
+
+To get a list of courses:
+http://localhost:8080/classreg2/listcourses.html
+

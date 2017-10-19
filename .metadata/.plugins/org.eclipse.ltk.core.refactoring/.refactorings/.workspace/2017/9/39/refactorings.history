@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;CS548_Onclass&apos;" deleteContents="false" description="Delete resource &apos;CS548_Onclass&apos;" element1="/CS548_Onclass" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1506790357198"/>
+</session>

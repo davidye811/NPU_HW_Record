@@ -1,0 +1,32 @@
+package ydw.domain;
+
+public class Student {
+	String Name;
+	int Id;
+	boolean isInternational;
+	boolean isUndergradute;
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
+	}
+	public boolean isInternational() {
+		return isInternational;
+	}
+	public void setInternational(boolean isInternational) {
+		this.isInternational = isInternational;
+	}
+	public boolean isUndergradute() {
+		return isUndergradute;
+	}
+	public void setUndergradute(boolean isUndergradute) {
+		this.isUndergradute = isUndergradute;
+	}
+}
